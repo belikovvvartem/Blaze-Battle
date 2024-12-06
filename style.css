@@ -18,6 +18,9 @@ body {
     background: radial-gradient(circle, rgba(255, 176, 47, 1) 0%, rgba(252, 106, 33, 1) 100%);
     color: #fff;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
     overflow-x: hidden;
     overflow-y: hidden;
 }
