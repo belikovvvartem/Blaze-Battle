@@ -4,74 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blaze Battle</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-    #game-container {
-      margin-top: 100px;
-    }
-    #flame-button {
-      width: 100px;
-      height: 100px;
-      background-color: #ff4500;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      outline: none;
-      animation: pulse 1s infinite;
-    }
-    #flame-button:hover {
-      background-color: #ff6347;
-    }
-    #score {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./fair.png" type="image/x-icon">
 </head>
 <body>
+    <header>
+        <img src="./fair.png" alt="" class="score-img">
+        <h1 class="header-title">Blaze Battle</h1>
+    <img src="./fair.png" alt="" class="score-img">
+</header>
   <div id="game-container">
-    <h1>Blaze Battle</h1>
-    <button id="flame-button"></button>
+    
     <div id="score">Score: 0</div>
+    <button class="shake-button" onclick="shakeButton(this)" id="flame-button"><img src="./fair.png" alt=""></button>
   </div>
 
-  <script>
-    // Відновлення кількості натискань з LocalStorage
-    let score = localStorage.getItem('blazeBattleScore') 
-      ? parseInt(localStorage.getItem('blazeBattleScore')) 
-      : 0;
+  <footer>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="./additional files/first-time.html">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="./additional files/first-time.html">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="text">Message</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="./additional files/first-time.html">
+                    <span class="icon">
+                        <ion-icon name="image-outline"></ion-icon>
+                    </span>
+                    <span class="text">Photos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="./additional files/first-time.html">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+  </footer>
 
-    // Оновлення тексту лічильника
-    const scoreElement = document.getElementById('score');
-    scoreElement.textContent = `Score: ${score}`;
 
-    // Кнопка для натискання
-    const flameButton = document.getElementById('flame-button');
-    flameButton.addEventListener('click', () => {
-      score++;
-      scoreElement.textContent = `Score: ${score}`;
-      
-      // Збереження кількості натискань у LocalStorage
-      localStorage.setItem('blazeBattleScore', score);
-    });
-  </script>
+  <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+  <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+  <script src="./script.js"></script>
 </body>
 </html>
